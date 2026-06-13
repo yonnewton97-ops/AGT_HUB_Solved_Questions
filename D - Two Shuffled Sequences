@@ -1,0 +1,30 @@
+from collections import Counter
+ 
+n = int(input())
+a = list(map(int, input().split()))
+ 
+cnt = Counter(a)
+ 
+for v in cnt.values():
+    if v > 2:
+        print("NO")
+        exit()
+ 
+inc = []
+dec = []
+ 
+for x in sorted(cnt):
+    inc.append(x)
+ 
+    if cnt[x] == 2:
+        dec.append(x)
+ 
+dec.sort(reverse=True)
+ 
+print("YES")
+ 
+print(len(inc))
+print(*inc)
+ 
+print(len(dec))
+print(*dec)
