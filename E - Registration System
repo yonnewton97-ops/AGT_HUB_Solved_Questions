@@ -1,0 +1,13 @@
+n = int(input())
+
+db = {}
+
+for _ in range(n):
+    name = input()
+
+    if name not in db:
+        print("OK")
+        db[name] = 1
+    else:
+        print(name + str(db[name]))
+        db[name] += 1
